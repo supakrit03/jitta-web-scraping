@@ -1,0 +1,15 @@
+{
+  "name": "invest-stock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "login": "node login.js",
+    "prep": "node prep-stock.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "puppeteer": "^21.3.8"
+  }
+}

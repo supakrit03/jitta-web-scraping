@@ -41,6 +41,8 @@ async function runScrap(stockKey) {
   console.log({ factSheetLink });
   await page.goto(factSheetLink, pageOptions);
 
+  await page.waitForSelector("div[data-cy='base-card']");
+
   const data = await page.evaluate(() => {
     const spans = Array.from(
       document.querySelectorAll(

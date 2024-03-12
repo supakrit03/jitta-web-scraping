@@ -19,6 +19,8 @@ const { getCookies, setCookies } = require("./jitta-scrapper");
   console.log({ listStockLink });
   await page.goto(listStockLink);
 
+  await page.waitForSelector(".FilterResults__ResultsWrapper-lnmeq7-0");
+
   const data = await page.evaluate(() => {
     const divArr = Array.from(
       document.querySelectorAll(".Text__TextXS-dn2wcp-3.jiPJYH")
@@ -43,3 +45,16 @@ const { getCookies, setCookies } = require("./jitta-scrapper");
 
   browser.close();
 })();
+
+// Second choice
+// let data = []
+// document.querySelectorAll(".Text__TextXS-dn2wcp-3.jiPJYH").forEach((item) => {
+//      const andOperator = "&amp;";
+//     const str = item.innerHTML.toLowerCase();
+//       if (str.includes(andOperator)) {
+//         data.push(str.replace(andOperator, "&"))
+//       }
+//       data.push(str);
+// })
+
+// console.log({ data })

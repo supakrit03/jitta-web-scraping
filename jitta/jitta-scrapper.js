@@ -20,7 +20,6 @@ async function setCookies(pageInstant, cookiesJSON) {
 }
 
 /**
- *
  * @param { string } stockKey // slug stock from Jitta.com ex. bkk:com7
  */
 async function runScrap(stockKey) {
@@ -41,7 +40,7 @@ async function runScrap(stockKey) {
   console.log({ factSheetLink });
   await page.goto(factSheetLink, pageOptions);
 
-  await page.waitForSelector("div[data-cy='base-card']");
+  await page.waitForSelector("div[class*=Card-sc-1tq8oou-0]");
 
   const data = await page.evaluate(() => {
     const spans = Array.from(
